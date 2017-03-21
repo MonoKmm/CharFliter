@@ -24,7 +24,7 @@
 
 ## API
 
-### fnInit(Object)  
+### CharFliter.fnInit(Object)  
 插件初始化  
 提供一个json 作为数据来源.  
 json的格式参考 ：[data](https://github.com/MonoKmm/CharFliter/blob/master/tsconfig.json)
@@ -37,7 +37,7 @@ json的格式参考 ：[data](https://github.com/MonoKmm/CharFliter/blob/master/
     var cf = new CharFilter(option);
 ```
 
-### getDataList(String,CallBackFn) 
+### CharFliter.getDataList(String,CallBackFn) 
 ### (Async)
 通过Ajax获取数据列表(*.json)，  
 从Ajax返回数据(Object)中获取与String相同的键值(key)，作为参数传递至CallBackFn
@@ -47,7 +47,7 @@ json的格式参考 ：[data](https://github.com/MonoKmm/CharFliter/blob/master/
     });
     
 ```
-### dataFilter(Boolearn,String,Array)  
+### CharFliter.dataFilter(Boolearn,String,Array)  
 数据筛选，返回的Object是定制筛选的结果，
 
 支持复数同类角色数据筛选  
@@ -65,14 +65,14 @@ json的格式参考 ：[data](https://github.com/MonoKmm/CharFliter/blob/master/
     //{arr:[...],type:'matched'}
     
 ```
-### getCart(Boolearn)  
+### CharFliter.getCart(Boolearn)  
 Boolearn = true; 返回cartArr  
 Boolearn = false; 返回cartArr.length  
 ```js
     cf.getCart(true) //['no05995','no05996']
     cf.getCart(false) // 2
 ```
-### addItem(Target,Boolearn)  
+### CharFliter.addItem(Target,Boolearn)  
 为cartArr属性添加数据  
 
 * Target  : 
@@ -82,7 +82,7 @@ Boolearn = false; 返回cartArr.length
 ````
 * Boolearn: 是否储存本次操作(撤销用)
 
-### deleteItem(Target,Index,Boolearn)  
+### CharFliter.deleteItem(Target,Index,Boolearn)  
 删除cartArr数组中指定数据  
 
 * Target  : 
@@ -93,7 +93,7 @@ Boolearn = false; 返回cartArr.length
 * Index   : 从cartArr数组中删除的数据(value)的数组下标
 * Boolearn: 是否储存本次操作(撤销用)  
 
-### undoItem()  
+### CharFliter.undoItem()  
 返回Object 包含上一次addItem或deleteItem操作保存的数据
 ```js
     cf.undoItem()//{type:'add',['no05995','no05996']}
